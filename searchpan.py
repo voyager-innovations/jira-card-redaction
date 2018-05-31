@@ -27,6 +27,8 @@ def get_params():
                             help='root directory to start traversing. Defaults to current working directory.')
 
         params = parser.parse_args()
+        if params.root_dir is None:
+            params.root_dir = os.getcwd()
 
         return params
 
